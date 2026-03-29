@@ -47,17 +47,6 @@
         "icon": "code",
         "groups": [
           {
-            "group": "Overview",
-            "icon": "file-text",
-            "pages": [
-              {
-                "title": "Authentication",
-                "path": "authentication",
-                "icon": "lock"
-              }
-            ]
-          },
-          {
             "group": "Endpoints",
             "openapi": "openapi.yaml"
           }
