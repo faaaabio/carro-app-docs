@@ -1,0 +1,66 @@
+---
+title: Pagamento
+description: Fluxo de pagamento ao encerrar a corrida — PIX e cartão.
+---
+
+## Visão geral
+
+O pagamento ocorre **entre o encerramento da corrida e a avaliação do passageiro**. O app suporta dois meios de pagamento no MVP: **PIX** (via QR Code) e **cartão** (processado pelo app).
+
+<Callout kind="info">
+  **Decisão de produto:** A integração de meios de pagamento foi incluída no escopo do MVP. Lançamento previsto para final de maio / início de junho.
+</Callout>
+
+---
+
+## Fluxo por meio de pagamento
+
+<Tabs>
+  <Tab title="PIX">
+    ### Pagamento via PIX
+
+    Quando o passageiro opta por pagar via PIX, o motorista exibe um **QR Code** na tela para leitura.
+
+    <Steps>
+      <Step title="Gerar QR Code" icon="qr-code">
+        Ao encerrar a corrida, o app gera automaticamente um QR Code PIX com o valor total da corrida.
+      </Step>
+      <Step title="Passageiro escaneia" icon="smartphone">
+        O passageiro aponta a câmera do próprio celular para o QR Code exibido na tela do motorista.
+      </Step>
+      <Step title="Confirmação de pagamento" icon="check-circle">
+        O app detecta o pagamento confirmado e avança automaticamente para a tela de avaliação.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Cartão">
+    ### Pagamento via cartão
+
+    Quando o passageiro paga via cartão (débito ou crédito), o pagamento já foi processado pelo app durante a corrida — sem ação adicional do motorista.
+
+    <Steps>
+      <Step title="Pagamento já processado" icon="credit-card">
+        O app identifica que o meio de pagamento é cartão e confirma o valor automaticamente.
+      </Step>
+      <Step title="Tela de confirmação" icon="check-circle">
+        Exibe confirmação do valor recebido e avança para a avaliação do passageiro.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+---
+
+## Estados da tela de pagamento
+
+| Estado | Descrição |
+|--------|-----------|
+| Aguardando PIX | QR Code visível, aguardando confirmação |
+| PIX confirmado | Feedback visual de sucesso, avança automaticamente |
+| Cartão | Confirmação imediata, sem interação adicional |
+
+---
+
+<Callout kind="alert">
+  Definir o comportamento quando o pagamento PIX demora ou falha (timeout, erro de conexão). Alinhar com o time de produto.
+</Callout>

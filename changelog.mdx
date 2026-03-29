@@ -1,22 +1,22 @@
 ---
-title: Sample Changelog
-description: Sample release notes you can replace with your real updates.
+title: Changelog
+description: Histórico de decisões de produto e atualizações da documentação do Carro App.
 ---
 
-## Sample updates
+<Update label="2026-03-29" description="Documentação inicial do App do Motorista" tags={["produto", "motorista", "mvp"]}>
+## App do Motorista — Fluxo de corrida
 
-<Callout kind="alert">
-This changelog is example content. Replace every entry with your real releases.
-</Callout>
+Documentadas as telas e decisões de design do fluxo completo de corrida para o motorista:
 
-<Update label="2026-01-26" description="Sample Update" tags={["sample"]}>
-## What changed
-- Cleaned up placeholder copy across the starter kit.
-- Added clearer "sample" messaging to avoid confusion.
-</Update>
+- **Aceitar corrida** — tela de oferta com timer, valor, rota e swipe para aceitar
+- **Corrida ativa** — layout fixo com zona de navegação (topo) e zona de operação (baixo, colapsável)
+- **Encerrar corrida** — avaliação do passageiro com estrelas e retorno à home
+- **Pagamento** — suporte a PIX (QR Code) e cartão no MVP
 
-<Update label="2025-12-10" description="Sample Update" tags={["sample"]}>
-## What changed
-- Simplified the Quickstart steps.
-- Trimmed Help Center examples.
+### Decisões registradas
+
+- Não implementar expansão de metas no estilo da 99 na tela de aceitar corrida no MVP (manter simples)
+- Integração de meios de pagamento incluída no MVP (PIX + cartão)
+- Lançamento previsto para final de maio / início de junho de 2026
+- Design da corrida ativa baseado no padrão Uber: topo sempre navegação, baixo sempre operação
 </Update>

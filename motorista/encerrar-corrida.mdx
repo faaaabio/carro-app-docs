@@ -1,0 +1,52 @@
+---
+title: Encerrar Corrida
+description: Fluxo de encerramento — avaliação do passageiro e retorno à home.
+---
+
+## Visão geral
+
+Ao chegar ao destino e confirmar o encerramento, o motorista é direcionado para a **tela de avaliação do passageiro**. Após avaliar, retorna à home aguardando uma nova corrida.
+
+## Fluxo de encerramento
+
+<Steps>
+  <Step title="Motorista chega ao destino" icon="map-pin">
+    O motorista pressiona **"Encerrar corrida"** na zona de operação da tela de corrida ativa.
+  </Step>
+  <Step title="Pagamento" icon="credit-card">
+    Dependendo da forma de pagamento escolhida pelo passageiro, o fluxo diverge aqui. Ver [Pagamento](/motorista/pagamento).
+  </Step>
+  <Step title="Avaliação do passageiro" icon="star">
+    Tela de avaliação exibida automaticamente após o pagamento confirmado.
+  </Step>
+  <Step title="Retorno à home" icon="home">
+    Após submeter a avaliação, o motorista retorna à tela inicial aguardando uma nova corrida.
+  </Step>
+</Steps>
+
+---
+
+## Tela de avaliação
+
+```
+┌─────────────────────────────────┐
+│                                 │
+│         [mapa minimizado]       │
+│                                 │
+├─────────────────────────────────┤
+│   Como foi a viagem?            │
+│                                 │
+│        [Nome do passageiro]     │
+│                                 │
+│       ★  ★  ★  ★  ★           │
+│                                 │
+│      [ Avaliar usuário ]        │
+└─────────────────────────────────┘
+```
+
+- **Avaliação por estrelas** (1 a 5)
+- CTA: **"Avaliar usuário"** para confirmar e voltar à home
+
+<Callout kind="info">
+  A avaliação é obrigatória para voltar ao estado "disponível". Isso mantém a qualidade da plataforma e garante feedback consistente sobre passageiros.
+</Callout>

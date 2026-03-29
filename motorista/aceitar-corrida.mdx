@@ -1,0 +1,67 @@
+---
+title: Aceitar Corrida
+description: Tela de oferta de nova corrida para o motorista.
+---
+
+## Visão geral
+
+Quando uma nova corrida está disponível, o motorista recebe uma oferta com um **timer de aceitação**. Se o tempo esgotar sem resposta, a corrida é direcionada para outro motorista.
+
+<Callout kind="info">
+  O motorista tem um tempo limitado para aceitar ou recusar. Por padrão, a corrida é recusada automaticamente se o tempo esgotar.
+</Callout>
+
+## Layout da tela
+
+<Columns cols="2">
+  <Card title="Timer de aceitação" icon="clock">
+    Contador regressivo no topo da tela. O motorista deve agir antes do tempo acabar.
+  </Card>
+  <Card title="Valor da corrida" icon="dollar-sign">
+    Exibido em destaque: valor total, taxa por km e bônus de meta diária quando aplicável (ex: +15% meta diária).
+  </Card>
+  <Card title="Pontos de rota" icon="map-pin">
+    Ponto de embarque com tempo e distância até o motorista chegar, e ponto de destino com tempo e distância total da corrida.
+  </Card>
+  <Card title="Deslize para aceitar" icon="chevrons-right">
+    CTA principal em formato de swipe para evitar aceites acidentais.
+  </Card>
+</Columns>
+
+## Informações exibidas
+
+### Cabeçalho — Valor e bonificação
+
+```
+R$ 24,50
+R$ 2,10/km   +15% meta diária
+```
+
+- **Valor total** da corrida em destaque
+- **Taxa por km** logo abaixo
+- **Badge de bonificação** quando há meta ativa (ex: bônus por volume de corridas)
+
+### Rota da corrida
+
+<Steps>
+  <Step title="Ponto de embarque (verde)" icon="circle">
+    Endereço de retirada do passageiro. Exibe tempo estimado (min) e distância (km) até o motorista chegar.
+  </Step>
+  <Step title="Ponto de destino (vermelho)" icon="map-pin">
+    Endereço de destino. Exibe tempo estimado total da corrida e distância em km.
+  </Step>
+</Steps>
+
+## CTA principal
+
+```
+[ ›  Deslize para aceitar  › ]
+```
+
+Botão em formato de **swipe deslizante** para confirmar o aceite. Evita toques acidentais em telas sensíveis ao toque.
+
+---
+
+<Callout kind="alert">
+  **Decisão de produto (MVP):** Não implementar a expansão de metas no estilo da 99 nesta tela inicialmente. Manter a oferta simples e objetiva.
+</Callout>

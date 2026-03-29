@@ -1,5 +1,5 @@
 {
-  "name": "Starter Kit",
+  "name": "Carro App",
   "colors": {
     "light": {
       "brand": "#F97316"
@@ -11,63 +11,32 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Documentation",
-        "icon": "book",
+        "tab": "App do Motorista",
+        "icon": "car",
         "groups": [
           {
-            "group": "Start Here",
-            "icon": "rocket",
+            "group": "Fluxo de Corrida",
+            "icon": "route",
             "pages": [
               {
-                "title": "Introduction",
-                "path": "introduction",
-                "icon": "home"
+                "title": "Aceitar Corrida",
+                "path": "motorista/aceitar-corrida",
+                "icon": "check-circle"
               },
               {
-                "title": "Quickstart",
-                "path": "quickstart",
-                "icon": "zap"
+                "title": "Corrida Ativa",
+                "path": "motorista/corrida-ativa",
+                "icon": "navigation"
               },
               {
-                "title": "Components",
-                "path": "components",
-                "icon": "code"
-              }
-            ]
-          },
-          {
-            "group": "Components",
-            "icon": "layers",
-            "pages": [
-              {
-                "title": "Images",
-                "path": "components/images",
-                "icon": "image"
+                "title": "Encerrar Corrida",
+                "path": "motorista/encerrar-corrida",
+                "icon": "flag"
               },
               {
-                "title": "Cards",
-                "path": "components/cards",
-                "icon": "square"
-              },
-              {
-                "title": "Code",
-                "path": "components/code",
-                "icon": "code"
-              },
-              {
-                "title": "Callouts",
-                "path": "components/callouts",
-                "icon": "message-square"
-              },
-              {
-                "title": "Steps",
-                "path": "components/steps",
-                "icon": "list-ordered"
-              },
-              {
-                "title": "Tabs",
-                "path": "components/tabs",
-                "icon": "columns"
+                "title": "Pagamento",
+                "path": "motorista/pagamento",
+                "icon": "credit-card"
               }
             ]
           }
@@ -89,52 +58,8 @@
             ]
           },
           {
-            "group": "Sample Endpoints",
+            "group": "Endpoints",
             "openapi": "openapi.yaml"
-          }
-        ]
-      },
-      {
-        "tab": "Help Center",
-        "icon": "help-circle",
-        "pages": [
-          {
-            "title": "Help Center",
-            "path": "help-center",
-            "icon": "home"
-          },
-          {
-            "group": "FAQs",
-            "icon": "help-circle",
-            "expandable": false,
-            "pages": [
-              {
-                "title": "Documentation Source",
-                "path": "help-center/faq/getting-started"
-              }
-            ]
-          },
-          {
-            "group": "Troubleshooting",
-            "icon": "alert-triangle",
-            "expandable": false,
-            "pages": [
-              {
-                "title": "Page Missing in Sidebar",
-                "path": "help-center/troubleshooting/install-error"
-              }
-            ]
-          },
-          {
-            "group": "Guides",
-            "icon": "book-open",
-            "expandable": false,
-            "pages": [
-              {
-                "title": "Create Your First Page",
-                "path": "help-center/guides/setup-project"
-              }
-            ]
           }
         ]
       },

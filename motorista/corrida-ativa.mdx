@@ -1,0 +1,126 @@
+---
+title: Corrida Ativa
+description: Tela principal durante a execução de uma corrida — do aceite ao destino.
+---
+
+## Visão geral
+
+A tela de corrida ativa é dividida em **duas zonas fixas**: navegação no topo e operação na parte de baixo. Esse layout se mantém durante todo o ciclo da corrida, do deslocamento até o passageiro ao encerramento no destino.
+
+<Callout kind="info">
+  O design não muda entre os estados da corrida. O que muda é o **conteúdo** de cada zona — garantindo consistência visual e reduzindo carga cognitiva para o motorista.
+</Callout>
+
+## Layout da tela
+
+```
+┌─────────────────────────────────┐
+│                                 │
+│         ZONA DE NAVEGAÇÃO       │  ← Sempre no topo
+│         (Mapa + direção)        │
+│                                 │
+│                                 │
+│                                 │
+├─────────────────────────────────┤
+│  ZONA DE OPERAÇÃO (colapsada)   │  ← Padrão: compacta
+│  ⏱ 4 min   📍 1,2 km           │
+└─────────────────────────────────┘
+```
+
+---
+
+## Zona de Navegação (topo)
+
+Ocupa a maior parte da tela. Exibe **somente o mapa e as instruções de direção**.
+
+- Toda a interface secundária (menus, painéis) é removida durante a navegação
+- A instrução atual fica no topo (ex: "Em 70 m, vire à direita na Rua X")
+- O endereço de destino é exibido abaixo da instrução
+
+**Estado 1 — Indo ao passageiro:**
+```
+↑  Rua Noraldino Alves de Lima
+70 m  para Estrada Água Chata
+
+📍 Rua Fernando Luz, 403 – Água Chata
+   Guarulhos – SP, 07251-365
+```
+
+**Estado 2 — Levando o passageiro ao destino:**
+```
+↑  [instrução de direção]
+   [endereço de destino]
+```
+
+---
+
+## Zona de Operação (parte inferior)
+
+Por padrão, a zona de operação fica **compacta** para não obstruir o mapa.
+
+### Estado compacto (padrão)
+
+Exibe apenas as informações essenciais:
+
+```
+⏱ 4 min   📍 1,2 km        [≡]
+```
+
+- Tempo estimado restante
+- Distância restante
+- Ícone de expansão (`≡`) para abrir o painel completo
+
+### Estado expandido
+
+O motorista pode expandir o painel tocando no ícone `≡`. O mapa recua para dar espaço à operação.
+
+<Tabs>
+  <Tab title="Indo ao passageiro">
+    ```
+    ┌─────────────────────────────────┐
+    │  ⏱ 4 min   📍 1,2 km      [^] │
+    ├─────────────────────────────────┤
+    │  👤 [Nome do passageiro]   [👤]│
+    │  [💬 Chat]  [🛡 Segurança]     │
+    │                                 │
+    │  [ Cheguei ao ponto de embarque]│
+    └─────────────────────────────────┘
+    ```
+    CTA principal: **"Cheguei ao ponto de embarque"**
+  </Tab>
+  <Tab title="Levando ao destino">
+    ```
+    ┌─────────────────────────────────┐
+    │  ⏱ 18 min  📍 8,5 km      [^] │
+    ├─────────────────────────────────┤
+    │  👤 [Nome do passageiro]   [👤]│
+    │  [💬 Chat]  [🛡 Segurança]     │
+    │                                 │
+    │  [     Encerrar corrida     ]   │
+    └─────────────────────────────────┘
+    ```
+    CTA principal: **"Encerrar corrida"**
+  </Tab>
+</Tabs>
+
+---
+
+## CTAs secundários
+
+Disponíveis no painel expandido em ambos os estados:
+
+| Ação | Ícone | Descrição |
+|------|-------|-----------|
+| Chat | 💬 | Abrir chat com o passageiro |
+| Perfil do passageiro | 👤 | Ver nome, foto e avaliação |
+| Segurança | 🛡 | Botão de emergência e suporte |
+
+---
+
+## Princípio de design
+
+<Callout kind="info">
+  **Topo = Navegação. Baixo = Operação.**
+
+  Essa separação se mantém em todos os estados da corrida. O motorista sempre sabe onde encontrar o que precisa, sem precisar reaprender o layout.
+</Callout>
